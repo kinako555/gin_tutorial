@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    build: ./containers/app/
+    tty: true
+    volumes:
+      - .:/go/src/gin_tutorial
+    ports:
+      - 8080:8080
+    command: go run test.go
