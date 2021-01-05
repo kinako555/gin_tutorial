@@ -1,6 +1,5 @@
-FROM golang:1.14.2
-COPY . .
+FROM golang:1.14
 WORKDIR /go/src/gin_tutorial
-RUN go get github.com/gin-gonic/gin
+COPY . .
+RUN go get -u github.com/gin-gonic/gin
 RUN go get github.com/codegangsta/gin
-ADD . /go/src/gin_tutorial
