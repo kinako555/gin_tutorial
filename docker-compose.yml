@@ -7,4 +7,3 @@ services:
       - .:/go/src/gin_tutorial
     ports:
       - 8080:8080
-    command: go run test.go
