@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    build: ./containers/app/
+    build: ./.devcontainer/containers/app/
     tty: true
     volumes:
       - .:/go/src/gin_tutorial
