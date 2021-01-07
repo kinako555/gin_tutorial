@@ -5,4 +5,5 @@ RUN go get -u github.com/gin-gonic/gin
 RUN go get github.com/codegangsta/gin
 RUN go get github.com/Unknwon/com
 RUN go get github.com/kelseyhightower/envconfig
+RUN go get github.com/Unknwon/com
 RUN eval $(cat .env)

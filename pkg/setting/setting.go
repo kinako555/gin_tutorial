@@ -2,6 +2,7 @@ package setting
 
 import (
 	"time"
+	"log"
 	"github.com/kelseyhightower/envconfig"
 )
 
@@ -24,17 +25,16 @@ type AppConfig struct {
 	JWTSecret string `envconfig:"JWTSECRET"`
 }
 
-type Config struct {
+type config struct {
 	DBConfig
 	ServerConfig
 	AppConfig
 }
+var Config = config{}
 
-func NewConfig() (Config, error) {
-	var config Config
-	err := envconfig.Process("", &config)
+func init() {
+	err := envconfig.Process("", &Config)
 	if err != nil {
-		return Config{}, err
+		log.Fatalf("Fail to load config wiht env :%v", err)
 	}
-	return config, nil
 }
