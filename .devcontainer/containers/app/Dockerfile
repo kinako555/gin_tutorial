@@ -6,4 +6,7 @@ RUN go get github.com/codegangsta/gin
 RUN go get github.com/Unknwon/com
 RUN go get github.com/kelseyhightower/envconfig
 RUN go get github.com/Unknwon/com
+RUN go get -u github.com/jinzhu/gorm
+# こっちのドライバーを使用する
+RUN go get github.com/lib/pq
 RUN eval $(cat .env)
