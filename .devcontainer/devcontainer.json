@@ -2,7 +2,7 @@
     "name": "gin-tutorial",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "app",
-    "workspaceFolder": "/go/src/gin_tutorial",
+    "workspaceFolder": "/home/kobayashi/go/src/gin_tutorial",
     "remoteUser": "kobayashi",
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",

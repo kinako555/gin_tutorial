@@ -1,7 +1,7 @@
 package util
 
 import (
-	"github.com/Unknwon/com"
+	"github.com/unknwon/com"
 	"github.com/gin-gonic/gin"
 	"gin_tutorial/pkg/setting"
 )

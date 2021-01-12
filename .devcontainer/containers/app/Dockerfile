@@ -3,8 +3,6 @@ ARG USER_UID
 ARG USER_GID
 ARG USERNAME
 
-RUN echo ${USER_UID}
-
 RUN groupadd --gid ${USER_GID} ${USERNAME} \
     && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} \
     #
@@ -13,14 +11,12 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
     && apt-get install -y sudo \
     && echo ${USERNAME} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${USERNAME} \
     && chmod 0440 /etc/sudoers.d/${USERNAME}
-WORKDIR /go/src/gin_tutorial
-COPY . .
-RUN go get -u github.com/gin-gonic/gin
-RUN go get github.com/codegangsta/gin
-RUN go get github.com/Unknwon/com
-RUN go get github.com/kelseyhightower/envconfig
-RUN go get github.com/Unknwon/com
-RUN go get -u github.com/jinzhu/gorm
-# こっちのドライバーを使用する
-RUN go get github.com/lib/pq
-RUN eval $(cat .env)
+
+ARG GO_PATH=/home/${USERNAME}/go
+ARG SRC_PATH=$GO_PATH/src/gin_tutorial
+
+WORKDIR $SRC_PATH
+COPY . $SRC_PATH
+RUN export GOPATH=$GO_PATH
+RUN chown -R $USERNAME:$USERNAME $GO_PATH
+RUN eval $(cat $SRC_PATH/.env)
