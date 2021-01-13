@@ -18,6 +18,8 @@ require (
 	github.com/mattn/go-shellwords v1.0.10 // indirect
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7
 	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
+	github.com/stretchr/objx v0.3.0 // indirect
+	github.com/stretchr/testify v1.6.1
 	github.com/ugorji/go v1.2.3 // indirect
 	github.com/unknwon/com v1.0.1
 	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad // indirect
@@ -25,4 +27,5 @@ require (
 	google.golang.org/protobuf v1.25.0 // indirect
 	gopkg.in/urfave/cli.v1 v1.20.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )

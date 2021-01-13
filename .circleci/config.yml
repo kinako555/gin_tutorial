@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.14.13
+        enviroment:
+    working_directory: ~/gin_tutorial
+    steps:
+      - checkout
+      - run:
+        name: Run test
+        commnad: |
+          eval $(cat .env)
+          go test ./../
